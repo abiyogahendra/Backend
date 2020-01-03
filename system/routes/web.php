@@ -31,9 +31,7 @@ Route::post('/tambah_penawaran','OperasionalController@index_tambah');
 Route::get('/data_pelanggan','DataPelangganController@index')->name('data_pelanggan');
 
 Route::get('/data_onderdil','DataOnderdilController@index')->name('data_onderdil');
-=======
 
->>>>>>> 18105c1f894147f3b6c462339e723ae0a7680683
 
 Route::get('/admin_lgout','OperasionalController@Logout')->name('logout');
 

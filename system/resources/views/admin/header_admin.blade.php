@@ -16,17 +16,13 @@
                <a class="nav-link text-light bg-primary" href="{{route('data_promo')}}">Promo</a>
             </li>
             <li class="nav-item" style="padding-left:10px">
-<<<<<<< HEAD
-               <a class="nav-link text-light bg-primary" href="{{route('data_onderdil')}}">Onderdil</a>
+              <a class="nav-link text-light bg-primary" href="{{route('data_onderdil')}}">Onderdil</a>
             </li>
-            <li class="nav-item" style="padding-left:10px">
-               <a class="nav-link text-light bg-primary" href="tambah.php">Transaksi</a>
-=======
+            <li class="nav-item" style="padding-left:10px">            
                <a class="nav-link text-light bg-primary" href="{{route('tambah_promo')}}">Tambah Promo</a>
             </li>
             <li class="nav-item" style="padding-left:10px">
                <a class="nav-link text-light bg-primary" href="#">Transaksi</a>
->>>>>>> 18105c1f894147f3b6c462339e723ae0a7680683
             </li>
           </ul>
         </div>
