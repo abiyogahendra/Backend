@@ -21,6 +21,11 @@
                                 <td><input type="text" name="jenisMtr" /></td>
                             </tr>
                             <tr>
+                                <td>Plat</td>
+                                <td>:</td>
+                                <td><input type="text" name="platMtr" /></td>
+                            </tr>
+                            <tr>
                                 <td>Harga</td>
                                 <td>:</td>
                                 <td><input type="text" name="hargaMtr" /></td>
