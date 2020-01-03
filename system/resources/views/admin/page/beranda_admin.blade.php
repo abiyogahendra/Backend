@@ -10,6 +10,7 @@
                           <th>Id</th>
                           <th>Nama</th>
                           <th>Jenis</th>
+                          <th>Plat</th>
                           <th>Harga</th>
                           <th>Kecepatan</th>
                           <th>Keterangan</th>
@@ -19,8 +20,9 @@
                       </tr>
                 </thead>
 
-                  @foreach($data as $dataPromo)
+                  @foreach($data as $dataMotor)
                   <tr>
+<<<<<<< HEAD
                         <td>{{$dataPromo->idmotor}}</td>
                         <td>{{$dataPromo->namaMtr}}</td>
                         <td>{{$dataPromo->jenisMtr}}</td>
@@ -29,15 +31,25 @@
                         <td>{{$dataPromo->keteranganMtr}}</td>
                         <td><img src="{{asset('assets/motor/motor/' . $dataPromo->imgmtr)}}" height="50px" width="70px;" alt=""></td>
                         <td>{{$dataPromo->imgmtr}}</td>
+=======
+                        <td>{{$dataMotor->idmotor}}</td>
+                        <td>{{$dataMotor->namaMtr}}</td>
+                        <td>{{$dataMotor->jenisMtr}}</td>
+                        <td>{{$dataMotor->platMtr}}</td>
+                        <td>{{$dataMotor->hargaMtr}}</td>
+                        <td>{{$dataMotor->keteranganMtr}}</td>
+                        <td><img src="{{asset('assets/motor/motor/' . $dataMotor->imgmtr)}}" height="50px" width="70px;" alt=""></td>
+                        <td>{{$dataMotor->imgmtr}}</td>
+>>>>>>> 18105c1f894147f3b6c462339e723ae0a7680683
                         <td style="text-align:center">
                               <div class="col-sm" style="padding-bottom:10px">
                                     <button  type="button" class="btn btn-outline-secondary"> 
-                                                <a href="{{route('edit', ['id' => $dataPromo->idmotor])}}" class="text-dark">Edit</a>
+                                                <a href="{{route('edit', ['id' => $dataMotor->idmotor])}}" class="text-dark">Edit</a>
                                     </button>                              
                               </div>
                               <div class="col-sm">                              
                                     <button type="button" class="btn btn-outline-secondary"> 
-                                                <a href="{{route('delete', ['id' => $dataPromo->idmotor])}}" class="text-dark">Delete</a>
+                                                <a href="{{route('delete', ['id' => $dataMotor->idmotor])}}" class="text-dark">Delete</a>
                                     </button>
                               </div>
                           

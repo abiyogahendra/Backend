@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Promo;
 Use App\Models\Motor;
 use Validator;
 use Auth;
@@ -112,14 +113,17 @@ class OperasionalController extends Controller {
     public function post_edit(Request $request, $id){
         $validator = Validator::make($request->all(),
                 [
-                    'namaMtr'=>'required',
-                    'jenisMtr'=>'required',
-                    'hargaMtr'=>'required',                                  
+                    'namaMtr'       =>'required',
+                    'jenisMtr'      =>'required',
+                    'platMtr'       =>'required',
+                    'hargaMtr'      =>'required',
+                                                      
                 ],
                 [
-                    'namaMtr.required'=>'Nama Harus Disikan',
-                    'jenisMtr.required'=>'Jenis Harus Diisikan',
-                    'HargaMtr.required'=>'Harga Harus diisikan',
+                    'namaMtr.required'      =>'Nama Harus Disikan',
+                    'jenisMtr.required'     =>'Jenis Harus Diisikan',
+                    'platMtr.required'      =>'Plat Harus Diisikan',
+                    'HargaMtr.required'     =>'Harga Harus diisikan',
                 ]       
             );
 
@@ -132,6 +136,7 @@ class OperasionalController extends Controller {
         $data = [
             'namaMtr'       => $request->namaMtr,
             'jenisMtr'      => $request->jenisMtr,
+            'platMtr'       => $request->platMtr,
             'hargamtr'      => $request->hargaMtr,
             'keteranganMtr' => $request->keteranganMtr,
         ];
@@ -146,6 +151,7 @@ class OperasionalController extends Controller {
         $dataYhapus = [
             'namaMtr'       => $request->namaMtr,
             'jenisMtr'      => $request->jenisMtr,
+            'platMtr'       => $request->platMtr,
             'hargamtr'      => $request->hargaMtr,
             'imageMotor'    => $request->imgmtr,
             'keteranganMtr' => $request->keteranganMtr,
@@ -164,6 +170,7 @@ class OperasionalController extends Controller {
                     'namaMtr'       =>'required',
                     'jenisMtr'      =>'required',
                     'hargaMtr'      =>'required',
+                    'platMtr'       =>'required',
                     //'imgmtr'        => 'required',
                     'keteranganMtr' => 'required',      
                                       
@@ -172,6 +179,7 @@ class OperasionalController extends Controller {
                     'namaMtr.required'      =>'Nama Harus Disikan',
                     'jenisMtr.required'     =>'Jenis Harus Diisikan',
                     'hargaMtr.required'     =>'Harga Harus diisikan',
+                    'platMtr.required'      =>'Plat Harus Diisikan',
                    // 'imgmtr.required'       =>'Image Harus diisikan',
                     'keteranganMtr.required'=>'Keterangan Harus diisikan',
 
@@ -187,6 +195,7 @@ class OperasionalController extends Controller {
                 $new_tawaran = new Motor();
                 $new_tawaran->namaMtr       =       $request->input('namaMtr');
                 $new_tawaran->jenisMtr      =       $request->input('jenisMtr');
+                $new_tawaran->platMtr      =        $request->input('platMtr');
                 $new_tawaran->hargaMtr      =       $request->input('hargaMtr');
                 $new_tawaran->keteranganMtr =       $request->input('hargaMtr');
                 $new_tawaran->imgmtr        =       $request->input('imgmtr');
@@ -196,8 +205,53 @@ class OperasionalController extends Controller {
         
             return redirect()->route('show_data');
         
+    }
+
+    public function tambah_promo(Request $request){
+        $validator = Validator::make($request->all(),
+            [
+                'idmotor'       => 'required',
+                'hargaPromo'    => 'required',
+            ],
+            [
+                'idmotor.required'      => 'ID Motor Harus Diisikan',
+                'hargaPromo.required'   => 'Harga Motor Harus Diisikan',
+            ]        
+        );
+
+        if($validator->fails()){
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $new_promo = new Promo();
+        $new_promo->idmotor     =   $request->input('idmotor');
+        $new_promo->hargaPromo  =   $request->input('hargaPromo');
+
+        $new_promo->save();
+
+        return redirect()->route('data_promo');
 
     }
+
+    public function promo_delete(Request $request, $id){
+        $dataPromo = Promo::where('idPromo','=', $id)->first();
+
+        $dataYhapus = [
+            'idmotor'       => $request->namaMtr,
+            'hargaPromo'    => $request->jenisMtr,            
+        ];
+
+        $delete = Promo::where('idPromo','=', $id)->delete($dataYhapus);
+        return redirect()->route('data_promo');
+    }
+    
+
+
+
+
+
 
 }
    
