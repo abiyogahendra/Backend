@@ -1,0 +1,15 @@
+                <h4> Cara Melakukan Pembayaran Secara Cash/Tunai</h4>
+        <div style="text-align: left"> 
+<pre>       
+1. Dengan menggunakan bank BRI 
+    a. Pesan kos yang ada inginkan
+    b. Masukkan input data sesuai dengan form
+    c. Pilih mitode Pembayaran transfer
+    d. transfer
+2. Dengan menggunakan indomaret
+    a. Pesan kos yang ada inginkan
+    b. Masukkan input data sesuai dengan form
+    c. Pilih mitode Pembayaran indomaret
+    d. Datang ke indomaret beli es
+</pre>  
+        </div>

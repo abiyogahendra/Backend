@@ -1,0 +1,13 @@
+                <h4> Cara Melakukan Pembayaran Secara Cash/Tunai</h4>
+        <div style="text-align: left"> 
+<pre>       
+1. Dengan mendatangi langsung tempat 
+    a. Datang ke kos
+    b. Temui Ibu kos
+    c. Lakukan booking dan bayar
+2. Kontak langsung si penyewa
+    a. Kontak si penyewa
+    b. Lakukan negosiasi maupun pemesanan
+    c. Lakukan transaksi dengan melalui transfer
+</pre>  
+        </div>
