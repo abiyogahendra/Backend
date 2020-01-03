@@ -204,8 +204,55 @@ class OperasionalController extends Controller {
         
             return redirect()->route('show_data');
         
+    }
+
+    public function tambah_promo(Request $request){
+        $validator = Validator::make($request->all(),
+            [
+                'idmotor'       => 'required',
+                'hargaPromo'    => 'required',
+            ],
+            [
+                'idmotor.required'      => 'ID Motor Harus Diisikan',
+                'hargaPromo.required'   => 'Harga Motor Harus Diisikan',
+            ]        
+        );
+
+        if($validator->fails()){
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $new_promo = new Promo();
+        $new_promo->idmotor     =   $request->input('idmotor');
+        $new_promo->hargaPromo  =   $request->input('hargaPromo');
+
+        $new_promo->save();
 
     }
+
+    // public function index_delete(Request $request, $id){
+    //     $dataMotor = Motor::where('idmotor','=', $id)->first();
+
+    //     $dataYhapus = [
+    //         'namaMtr'       => $request->namaMtr,
+    //         'jenisMtr'      => $request->jenisMtr,
+    //         'platMtr'       => $request->platMtr,
+    //         'hargamtr'      => $request->hargaMtr,
+    //         'imageMotor'    => $request->imgmtr,
+    //         'keteranganMtr' => $request->keteranganMtr,
+    //     ];
+
+    //     $delete = Motor::where('idmotor','=', $id)->delete($dataYhapus);
+    //     return redirect()->route('show_data');
+    // }
+    
+
+
+
+
+
 
 }
    

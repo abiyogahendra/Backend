@@ -16,7 +16,8 @@ Route::get('/admin','AdminController@Login')->name('Login');
 Route::post('/admin','OperasionalController@LoginAdmin');
 Route::post('/LoginAdmin','OperasionalController@LoginAdmin');
 
-
+Route::get('/tambah_promo','TambahPromoController@index')->name('tambah_promo');
+Route::get('/tambah_promo','OperasionalController@tambah_promo');
 
 
 
