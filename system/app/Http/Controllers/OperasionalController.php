@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Promo;
 Use App\Models\Motor;
 use Validator;
 use Auth;
@@ -230,23 +231,21 @@ class OperasionalController extends Controller {
 
         $new_promo->save();
 
+        return redirect()->route('data_promo');
+
     }
 
-    // public function index_delete(Request $request, $id){
-    //     $dataMotor = Motor::where('idmotor','=', $id)->first();
+    public function promo_delete(Request $request, $id){
+        $dataPromo = Promo::where('idPromo','=', $id)->first();
 
-    //     $dataYhapus = [
-    //         'namaMtr'       => $request->namaMtr,
-    //         'jenisMtr'      => $request->jenisMtr,
-    //         'platMtr'       => $request->platMtr,
-    //         'hargamtr'      => $request->hargaMtr,
-    //         'imageMotor'    => $request->imgmtr,
-    //         'keteranganMtr' => $request->keteranganMtr,
-    //     ];
+        $dataYhapus = [
+            'idmotor'       => $request->namaMtr,
+            'hargaPromo'    => $request->jenisMtr,            
+        ];
 
-    //     $delete = Motor::where('idmotor','=', $id)->delete($dataYhapus);
-    //     return redirect()->route('show_data');
-    // }
+        $delete = Promo::where('idPromo','=', $id)->delete($dataYhapus);
+        return redirect()->route('data_promo');
+    }
     
 
 
