@@ -16,6 +16,9 @@
                <a class="nav-link text-light bg-primary" href="{{route('data_promo')}}">Promo</a>
             </li>
             <li class="nav-item" style="padding-left:10px">
+               <a class="nav-link text-light bg-primary" href="{{route('data_onderdil')}}">Onderdil</a>
+            </li>
+            <li class="nav-item" style="padding-left:10px">
                <a class="nav-link text-light bg-primary" href="tambah.php">Transaksi</a>
             </li>
           </ul>

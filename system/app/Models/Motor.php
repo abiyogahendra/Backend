@@ -16,7 +16,7 @@ class Motor extends Model
      * @var array
      */
 
-     protected $fillable  = ['idmotor', 'namaMtr', 'jenisMtr', 'hargaMtr', 'keteranganMtr', 'imgmtr'];
+     protected $fillable  = ['idmotor', 'namaMtr', 'jenisMtr', 'hargaMtr','Kecepatan', 'keteranganMtr', 'imgmtr'];
 
     /**
      * The attributes that should be hidden for arrays.

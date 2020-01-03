@@ -29,6 +29,7 @@ Route::post('/tambah_penawaran','OperasionalController@index_tambah');
 
 Route::get('/data_pelanggan','DataPelangganController@index')->name('data_pelanggan');
 Route::get('/data_promo','DataPromoController@index')->name('data_promo');
+Route::get('/data_onderdil','DataOnderdilController@index')->name('data_onderdil');
 
 Route::get('/admin_lgout','OperasionalController@Logout')->name('logout');
 
