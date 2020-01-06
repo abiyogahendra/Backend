@@ -19,14 +19,12 @@
 
                   @foreach($pemesanan as $dataPemesanan)
                   <tr>
-                        <td>{{$dataPemesanan->idmotor}}</td>
-                        <td>{{$dataPemesanan->namaMtr}}</td>
-                        <td>{{$dataPemesanan->jenisMtr}}</td>
-                        <td>{{$dataPemesanan->platMtr}}</td>
-                        <td>{{$dataPemesanan->hargaMtr}}</td>
-                        <td>{{$dataPemesanan->keteranganMtr}}</td>
-                        <td><img src="{{asset('assets/motor/motor/' . $dataPemesanan->imgmtr)}}" height="50px" width="70px;" alt=""></td>
-                        <td>{{$dataPemesanan->imgmtr}}</td>
+                        <td>{{$dataPemesanan->id_pemesanan}}</td>
+                        <td>{{$dataPemesanan->pelanggan}}</td>
+                        <td>{{$dataPemesanan->motor}}</td>
+                        <td>Gambar Motor</td>
+                        <td>{{$dataPemesanan->total}}</td>
+                        <td>{{$dataPemesanan->created_at}}</td> 
                         <td style="text-align:center">
                               <div class="col-sm" style="padding-bottom:10px">
                                     <button  type="button" class="btn btn-outline-secondary"> 

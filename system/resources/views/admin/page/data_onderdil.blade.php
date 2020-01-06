@@ -11,7 +11,7 @@
                           <th>Harga Onderdil</th>
                           <th>Nama Onderdil</th>
                           <th>Gambar Onderdil</th>
-                          <th>Created At</th>
+                          <th>Updated at</th>
                           <th>Created at</th>
                           <th>Action</th>
                       </tr>

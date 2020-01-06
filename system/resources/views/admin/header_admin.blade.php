@@ -22,7 +22,7 @@
                <a class="nav-link text-light bg-primary" href="{{route('tambah_promo')}}">Tambah Promo</a>
             </li>
             <li class="nav-item" style="padding-left:10px">
-               <a class="nav-link text-light bg-primary" href="#">Transaksi</a>
+               <a class="nav-link text-light bg-primary" href="{{route('data_pemesanan')}}">Transaksi</a>
             </li>
           </ul>
         </div>

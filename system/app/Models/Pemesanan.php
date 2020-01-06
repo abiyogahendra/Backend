@@ -17,7 +17,7 @@ class Pemesanan extends Model
      */
     
 
-     protected $fillable = ['id_pemesanan', 'idmotor'];
+     protected $fillable = ['id_pemesanan', 'idmotor','id_pelanggan'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -28,8 +28,8 @@ class Pemesanan extends Model
     	return $this->belongsTo('App\Models\Motor', 'idmotor');
     }
 
-    public function pelanggan(){
-        return $this->belongsTo('App\Models\Pelanggan', 'id_pelanggan');
-    }
+    // public function pelanggan(){
+    //     return $this->belongsTo('App\Models\Pelanggan', 'id_pelanggan');
+    // }
         
 }

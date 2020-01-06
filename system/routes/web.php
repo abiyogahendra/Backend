@@ -40,6 +40,9 @@ Route::get('/data_onderdil','DataOnderdilController@index')->name('data_onderdil
 //Route::get('/admin_lgout','OperasionalController@Logout')->name('logout');
 
 
+//Route data pemesanan
+Route::get('/pemesanan','PemesananController@index')->name('data_pemesanan');
+
 
 
 

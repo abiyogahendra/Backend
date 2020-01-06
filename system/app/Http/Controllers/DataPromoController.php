@@ -11,6 +11,7 @@ class DataPromoController extends Controller
     public function index(){
         $dataPromo = Promo::all();
 
+       // dd($dataPromo->motor);
 
         //dd($dataPelanggan->toArray());  
         return view('admin.page.data_promo')
