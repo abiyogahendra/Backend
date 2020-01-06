@@ -12,7 +12,6 @@
                           <th>Jenis</th>
                           <th>Plat</th>
                           <th>Harga</th>
-                          <th>Kecepatan</th>
                           <th>Keterangan</th>
                           <th>Gambar</th>
                           <th>Nama Gambar</th>

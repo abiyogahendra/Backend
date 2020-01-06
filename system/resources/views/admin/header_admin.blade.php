@@ -28,7 +28,7 @@
         </div>
        <div class="col-auto mr-5 my-auto">          
               <div class="btn-group">
-              <a href="{{route('logout')}}"><button type="button" class="btn btn-danger">Keluar</button> </a>        
+              <a href="#"><button type="button" class="btn btn-danger">Keluar</button> </a>        
               </div>
         </div>
       </div>

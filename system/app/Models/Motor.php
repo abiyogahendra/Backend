@@ -27,5 +27,8 @@ class Motor extends Model
     public function Promo(){ 
         return $this->hasMany('App\Models\Promo', 'idmotor'); 
     }
+    public function Pemesanan(){ 
+        return $this->hasMany('App\Models\pemesanan', 'idmotor'); 
+    }
         
     }
