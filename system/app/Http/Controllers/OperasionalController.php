@@ -163,7 +163,7 @@ class OperasionalController extends Controller {
 
     public function index_tambah(Request $request){
         
-        //dd($request->toArray());
+       //dd($request->toArray());
          
         $validator = Validator::make($request->all(),
                 [
@@ -171,7 +171,7 @@ class OperasionalController extends Controller {
                     'jenisMtr'      =>'required',
                     'hargaMtr'      =>'required',
                     'platMtr'       =>'required',
-                    //'imgmtr'        => 'required',
+                    'imgmtr'        => 'required',
                     'keteranganMtr' => 'required',      
                                       
                 ],
@@ -180,7 +180,7 @@ class OperasionalController extends Controller {
                     'jenisMtr.required'     =>'Jenis Harus Diisikan',
                     'hargaMtr.required'     =>'Harga Harus diisikan',
                     'platMtr.required'      =>'Plat Harus Diisikan',
-                   // 'imgmtr.required'       =>'Image Harus diisikan',
+                    'imgmtr.required'       =>'Image Harus diisikan',
                     'keteranganMtr.required'=>'Keterangan Harus diisikan',
 
                 ]       
@@ -191,14 +191,24 @@ class OperasionalController extends Controller {
                         ->withErrors($validator)
                         ->withInput();
                 }
-            
+                    
+                        $file = $request->file('imgmtr');
+
+                        $nama_image = $file->getClientOriginalName();
+                        
+                           // dd($file);
+
+                        $tujuan_upload = 'assets/motor/motor';
+                        $file->move($tujuan_upload,$file->getClientOriginalName());
+
+
                 $new_tawaran = new Motor();
                 $new_tawaran->namaMtr       =       $request->input('namaMtr');
                 $new_tawaran->jenisMtr      =       $request->input('jenisMtr');
                 $new_tawaran->platMtr      =        $request->input('platMtr');
                 $new_tawaran->hargaMtr      =       $request->input('hargaMtr');
                 $new_tawaran->keteranganMtr =       $request->input('hargaMtr');
-                $new_tawaran->imgmtr        =       $request->input('imgmtr');
+                $new_tawaran->imgmtr        =       $file->getClientOriginalName();
 
 
                 $new_tawaran->save();

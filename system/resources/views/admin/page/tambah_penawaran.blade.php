@@ -7,7 +7,7 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Tambahkan Data</h5>
-                <form method="post" action=" ">
+                <form method="post" action=" " enctype="multipart/form-data" >
                     @csrf
                     <table class="col-7 table table-borderless"> 
                             <tr>
@@ -41,7 +41,7 @@
                             <tr>
                                 <td>Masukkan gambar</td>
                                 <td>:</td>
-                            <td><input type="file" name="gambar"/></td>
+                            <td><input type="file" name="imgmtr"/></td>
                             </tr>
                             <tr>
                             <td></td>
