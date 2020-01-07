@@ -207,7 +207,7 @@ class OperasionalController extends Controller {
                 $new_tawaran->jenisMtr      =       $request->input('jenisMtr');
                 $new_tawaran->platMtr      =        $request->input('platMtr');
                 $new_tawaran->hargaMtr      =       $request->input('hargaMtr');
-                $new_tawaran->keteranganMtr =       $request->input('hargaMtr');
+                $new_tawaran->keteranganMtr =       $request->input('keteranganMtr');
                 $new_tawaran->imgmtr        =       $file->getClientOriginalName();
 
 
