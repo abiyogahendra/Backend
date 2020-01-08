@@ -11,7 +11,7 @@ use Auth;
 class HomeController extends Controller
 {
     public function __construct(){
-        $this->middleware(['web']);
+        $this->middleware(['web','check.auth']);
     }
     
     public function index(){

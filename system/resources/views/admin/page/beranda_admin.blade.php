@@ -3,6 +3,7 @@
 @section('content')
 
 <h1 align="center">Data admin</h1><hr>
+      <a href="{{route('tambah_penawaran')}}"><div class="container" style="padding-bottom:30px"><button type="button" class="btn btn-dark btn-lg" >Tambah Penawaran</button></div></a>
       <div align="center">
           <table  class="col-8 table align-center" border=1> 
                 <thead style="text-align:center" class="thead-dark">

@@ -24,9 +24,9 @@ class Pelanggan extends Model
          * @var array
          */
         
-     public function Pemesanan(){ 
-        return $this->hasMany('App\Models\Pemesanan', 'id_pelangan'); 
-    }
+    //  public function Pemesanan(){ 
+    //     return $this->hasMany('App\Models\Pemesanan', 'id_pelangan'); 
+    // }
     
         
     }

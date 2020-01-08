@@ -7,9 +7,6 @@
               <a class="nav-link active text-light bg-primary" href="{{route('show_data')}}">Beranda</a>
             </li>
             <li class="nav-item" style="padding-left:10px">
-               <a class="nav-link text-light bg-primary" href="{{route('tambah_penawaran')}}">Tambah Penawaran</a>
-            </li>
-            <li class="nav-item" style="padding-left:10px">
                <a class="nav-link text-light bg-primary" href="{{route('data_pelanggan')}}">Data Pelanggan</a>
             </li>
             <li class="nav-item" style="padding-left:10px">
@@ -17,10 +14,7 @@
             </li>
             <li class="nav-item" style="padding-left:10px">
               <a class="nav-link text-light bg-primary" href="{{route('data_onderdil')}}">Onderdil</a>
-            </li>
-            <li class="nav-item" style="padding-left:10px">            
-               <a class="nav-link text-light bg-primary" href="{{route('tambah_promo')}}">Tambah Promo</a>
-            </li>
+            </li>            
             <li class="nav-item" style="padding-left:10px">
                <a class="nav-link text-light bg-primary" href="{{route('data_pemesanan')}}">Transaksi</a>
             </li>
@@ -28,7 +22,7 @@
         </div>
        <div class="col-auto mr-5 my-auto">          
               <div class="btn-group">
-              <a href="#"><button type="button" class="btn btn-danger">Keluar</button> </a>        
+              <a href="{{route('logout')}}"><button type="button" class="btn btn-danger">Keluar</button> </a>        
               </div>
         </div>
       </div>
