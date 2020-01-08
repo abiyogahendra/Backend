@@ -29,6 +29,11 @@
                         <td>{{$dataPromo->updated_at}}</td>
                         <td>{{$dataPromo->created_at}}</td>                       
                         <td style="text-align:center">
+                              <!-- <div class="col-sm" style="padding-bottom:10px">
+                                    <button  type="button" class="btn btn-outline-secondary"> 
+                                                <a href="{{route('edit_promo', ['id' => $dataPromo->idPromo])}}" class="text-dark">Edit</a>
+                                    </button>                              
+                              </div> -->
                               <div class="col-sm">                              
                                     <button type="button" class="btn btn-outline-secondary"> 
                                     <a href="{{route('promo_delete', ['id' => $dataPromo->idPromo])}}" class="text-dark">Delete</a>

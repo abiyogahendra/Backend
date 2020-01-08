@@ -13,30 +13,12 @@
                             <tr>
                                 <td>Nama</td>
                                 <td>:</td>
-                                <td><input type="text" name="namaMtr" value="{{$data->namaMtr}}"/></td>
-                            </tr>
-                            <tr>
-                                <td>Jenis</td>
-                                <td>:</td>
-                                <td><input type="text" name="jenisMtr" value="{{$data->jenisMtr}}"/></td>
-                            </tr>
-                            <tr>
-                                <td>Plat</td>
-                                <td>:</td>
-                                <td><input type="text" name="platMtr" value="{{$data->platMtr}}"/></td>
+                                <td><input type="text" name="namaOnderdil" value="{{$data->namaOnderdil}}"/></td>
                             </tr>
                             <tr>
                                 <td>Harga</td>
                                 <td>:</td>
-                                <td><input type="text" name="hargaMtr" value="{{$data->hargaMtr}}"/></td>
-                            </tr>
-                            <tr>
-                                <td>keterangan</td>
-                                <td>:</td>
-                                <td style="height:20">
-                                    <textarea name="keteranganMtr" cols="30" rows="10" placeholder="{{$data->keteranganMtr}}"/></textarea>
-                                
-                                </td>
+                                <td><input type="text" name="hargaOnderdil" value="{{$data->hargaOnderdil}}"/></td>
                             </tr>
                             <tr>
                             <td></td>

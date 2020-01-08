@@ -20,16 +20,21 @@
 
                   @foreach($data as $dataOnderdil)
                   <tr>
-                        <td>{{$dataOnderdil->idOnderdil}}</td>
+                        <td style="text-align:center">{{$dataOnderdil->idOnderdil}}</td>
                         <td>{{$dataOnderdil->hargaOnderdil}}</td>
                         <td>{{$dataOnderdil->namaOnderdil}}</td>
-                        <td>{{$dataOnderdil->imgOnderdil}}</td>
+                        <td><img class="text-center" src="{{asset('assets/Onderdil/Onderdil/' . $dataOnderdil->imgOnderdil)}}" height="50px" width="70px;" alt="data Image Onderdil"></td>
                         <td>{{$dataOnderdil->updated_at}}</td>
                         <td>{{$dataOnderdil->created_at}}</td>                       
                         <td style="text-align:center">
+                              <div class="col-sm" style="padding-bottom:10px">
+                                    <button  type="button" class="btn btn-outline-secondary"> 
+                                                <a href="{{route('edit_onderdil', ['id' => $dataOnderdil->idOnderdil])}}" class="text-dark">Edit</a>
+                                    </button>                              
+                              </div>
                               <div class="col-sm">                              
                                     <button type="button" class="btn btn-outline-secondary"> 
-                                                <a href="#" class="text-dark">Delete</a>
+                                                <a href="{{route('hapus_onderdil', ['id' => $dataOnderdil->idOnderdil])}}" class="text-dark">Delete</a>
                                     </button>
                               </div>
                           

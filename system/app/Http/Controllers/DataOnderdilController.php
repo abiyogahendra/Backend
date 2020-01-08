@@ -70,18 +70,53 @@ class DataOnderdilController extends Controller
      }
 
 
-     public function delete_promo (Request $request, $id){
+     public function hapus_onderdil (Request $request, $id){
          $dataHapus = Onderdil::where('idOnderdil','=', $id)->first();
 
          $dataYhapus = [
-            'idOnderdil'      => $request->idOnderdil,
-            'hargaOnderdil'    => $request->hargaOnderdil,
-            'imgOnderdil'         => $request->imgOnderdil,            
+            'idOnderdil'        => $request->idOnderdil,
+            'hargaOnderdil'     => $request->hargaOnderdil,
+            'imgOnderdil'       => $request->imgOnderdil,            
         ];
 
-        $delete = Pemesanan::where('id_pemesanan','=', $id)->delete($dataYhapus);
-        return redirect()->route('data_pemesanan');
+        $delete = Onderdil::where('idOnderdil','=', $id)->delete($dataYhapus);
+        return redirect()->route('data_onderdil');
     }
-     }
+
+    public function edit_onderdil(Request $request, $id){
+        $data_edit = Onderdil::where('idOnderdil','=', $id)->first();
+        
+        return view('admin.page.edit_onderdil', ['data' => $data_edit]);
+    }
+
+    public function post_edit_onderdil(Request $request, $id){
+
+        $validator = Validator::make($request->all(),
+                [
+                    'namaOnderdil'       =>'required',
+                    'hargaOnderdil'      =>'required',
+                                                      
+                ],
+                [
+                    'namaOnderdil.required'      =>'Nama Harus Disikan',
+                    'hargaOnderdil.required'     =>'Harga Harus diisikan',
+                ]       
+            );
+
+        if($validator->fails()){
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $data = [
+            'namaOnderdil'       => $request->namaOnderdil,
+            'hargaOnderdil'      => $request->hargaOnderdil,
+        ];
+
+        $update = Onderdil::where('idOnderdil',$id)->update($data);
+        return redirect()->route('data_onderdil');
+    }
+     
 
 }

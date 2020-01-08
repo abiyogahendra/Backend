@@ -17,11 +17,6 @@ class OperasionalController extends Controller {
         $this->middleware(['web']);
     }
 
-    public function Logout(Request $request){
-        //$request->session()->forget('admin_id');        
-        return redirect()->route('logout');
-    }
-
     public function LoginAdmin(Request $request) {
         //dd($request -> toArray());
 
@@ -51,14 +46,13 @@ class OperasionalController extends Controller {
             $password = $request->password;
 
             
-
         if (Auth::attempt($credentials)) {
-            //Auth::Pelanggan()->nam
-            //$request->session()->put('nama', $user->id);
-           //($request -> toArray());
-           //dd(Auth()::nama)
+                //Auth::Pelanggan()->nam
+                //$request->session()->put('nama', $user->id);
+                //($request -> toArray());
+                //dd(Auth()::nama)
            return redirect()->route('show_data');  
-           //return view('pages.home')
+                //return view('pages.home')
             
         }else{
            return response()->json([
@@ -71,35 +65,6 @@ class OperasionalController extends Controller {
         
     }
 
-    
-
-    
-    public function doRegistration(Request $request){
-        $validator = Validator::make($request->all(),
-            [
-                'email'=>'required|email|unique:pelanggan',
-                'nama'=>'required',
-                'password' => 'required'
-            ],
-            [
-                'nama.required'=>'Nama Harus Di isikan','username.required'=>'Username Diharuskan'
-            ]
-            );
-             if ($validator->fails()){
-                                  return redirect()->back()
-                                                ->withErrors($validator)
-                                                ->withInput();               
-                        }
-        
-        $new_user = new User();
-        $new_user->nama    =       $request->input('nama');
-        $new_user->email    =       $request->input('email');
-        $new_user->password =       bcrypt($request->input('password'));
-        $new_user->save();
-
-        return redirect('/registrasi');
- 
-    }
     
     public function index_edit(Request $request, $id){
         $dataMotor = Motor::where('idmotor','=', $id)->first();
